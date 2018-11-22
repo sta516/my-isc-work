@@ -196,3 +196,85 @@ print(thing2)
 #something[0] = "B"
 
 
+#Exercise 7: Aliasing
+
+
+#Exercise 8: Functions
+#1:
+def double_it(number):
+	return number * 2
+
+print(double_it(5))
+print(double_it(float(0.3)))
+print(double_it("hello"))
+
+#2:
+def calc_hypo(a,b):
+	hypo = ((a ** 2) + (b ** 2)) * 0.5
+	return hypo
+	
+print(calc_hypo(2,5))
+print(calc_hypo(6,8))
+print(calc_hypo(3,4))
+
+#3:
+def calc_hypo_2(a,b):
+	if type(a) not in (int,float) or type(b) not in (int,float):
+		print("Bad argument")
+		return False
+	if a < 0 or b < 0:
+		print("Bad argument")
+		return False
+	hypo = ((a ** 2) + (b ** 2)) * 0.5
+	return hypo	
+		
+print(calc_hypo_2(2,3))
+print(calc_hypo_2(-2,3))
+print(calc_hypo_2(6,"three"))
+
+
+#Exercise 10: Sets and Dictionaries
+#1:
+a = set([0,1,2,3,4,5])
+b = set([2,4,6,8])
+print(a.union(b))
+print(a.intersection(b))
+
+
+#2:
+band = ["mel", "geri", "victoria", "mel", "emma"]
+counts = {}
+for member in band:
+	if member not in counts:
+		counts[member] = 1
+	else:
+		counts[member] += 1
+for member in counts:
+    print(member, counts[member])
+    
+
+#3:
+if{}: print('hi') #Not true, so it doesn't give a value
+d = {"maggie" : "uk", "ronnie": "usa"}
+print(dir(d))
+print(d.items())
+print(d.keys())
+print(d.values())
+#help(d.get)
+print(d.get("maggie"))
+print(d.get("Someone"))
+print(d.get("Anybody","Nowhere"))
+
+
+#Exercise 11: Object Oriented Programming (OOP)
+
+#2:
+from band import Band
+ws = Band("The White Stripes")
+ws.employ("Meg",100)
+ws.employ("Jack",100)
+ws.write_annual_report()
+
+
+#3:
+

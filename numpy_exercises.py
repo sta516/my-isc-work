@@ -81,3 +81,32 @@ u2 = np.array([[4, 5, 0.01], [2, 3, 4]])
 v2 = np.array([[2, 2, 0.03], [1, 1, 1]])
 
 print(wind_magnitude(u2, v2))
+
+
+#Exercise 4: Working with missing values
+#1: 
+import numpy.ma as MA
+marr = MA.array(range(10), fill_value = -999)
+print(marr)
+print(marr, marr.fill_value)
+marr[2] = MA.masked
+print(marr)
+print(marr.mask)
+narr = MA.masked_where(marr > 6, marr)
+print(narr)
+narr_filled = MA.filled(narr)
+print(narr_filled)
+print(type(narr_filled))
+
+#2:
+m1 = MA.array(range(1,9))
+print(m1)
+m2 = m1.reshape(2,4)
+print(m2)
+m3 = MA.masked_where(m2 > 6, m2)
+print(m3)
+m4 = m3 * 100
+print(m4)
+m5 = np.ones((2,4))
+m6 = m3 - m5
+print(m6)
